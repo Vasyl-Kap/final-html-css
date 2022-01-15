@@ -1,0 +1,1253 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.header {
+  width: 100%;
+  height: 700px;
+  background-image: url(../images/header_d_t.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+.logo-buttons {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo-buttons .logo {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #FFFFFF;
+}
+
+.logo-buttons .buttons__log, .logo-buttons .buttons__sign {
+  width: 90px;
+  height: 36px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  outline: none;
+  border: none;
+}
+
+.logo-buttons .buttons__log:hover, .logo-buttons .buttons__sign:hover {
+  border: 2px solid #FFFFFF;
+  border-radius: 40px;
+}
+
+.promo {
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 110px;
+}
+
+.promo__bolt {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 52px;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 63px;
+}
+
+.promo__normal {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  color: #F7F3F2;
+  padding-top: 28px;
+}
+
+.promo_center {
+  text-align: center;
+}
+
+.promo__button {
+  margin: 33px auto 0;
+  background-color: #FF4E50;
+  width: 225px;
+  height: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.dreamshare__works, .partners__text, .discover__text, .holiday__text {
+  padding: 89px 0 35px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  color: #444444;
+}
+
+.dreamshare {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.dreamshare__step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dreamshare__step__one, .dreamshare__step__two, .dreamshare__step__three {
+  width: 300px;
+  height: 400px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.dreamshare__step__one {
+  background-image: url(../images/step1_d_t.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.6))), url(../images/step1_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step1_d_t.png) 0 0 no-repeat;
+}
+
+.dreamshare__step__one__button {
+  margin: 0 0 25px 25px;
+  width: 70px;
+  height: 20px;
+  border-radius: 40px;
+  background-color: #FF4E50;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+
+.dreamshare__step__one__bolt {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 26px;
+  color: #FFFFFF;
+  margin: 0 0 25px 25px;
+}
+
+.dreamshare__step__one__normal {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: #E3E3E3;
+  margin: 0 25px 21px 25px;
+}
+
+.dreamshare__step__two {
+  background-image: url(../images/step2_d_t.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.6))), url(../images/step2_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step2_d_t.png) 0 0 no-repeat;
+}
+
+.dreamshare__step__three {
+  background-image: url(../images/step3_d_t.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.6))), url(../images/step3_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step3_d_t.png) 0 0 no-repeat;
+}
+
+.dreamshare__step__one, .dreamshare__step__two {
+  margin-right: 20px;
+}
+
+.partners__blocks__about__one, .partners__blocks__about__two, .partners__blocks__about__three, .partners__blocks__about__four {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 17px;
+}
+
+.partners {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.partners__blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 36px;
+}
+
+.partners__blocks__first, .partners__blocks__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50%;
+}
+
+.partners__blocks__about {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.partners__blocks__about__profile {
+  width: 231px;
+}
+
+.partners__blocks__about__one {
+  background-image: url(../images/Avatar1.png);
+}
+
+.partners__blocks__about__two {
+  background-image: url(../images/Avatar2.png);
+}
+
+.partners__blocks__about__three {
+  background-image: url(../images/Avatar3.png);
+}
+
+.partners__blocks__about__four {
+  background-image: url(../images/Avatar4.png);
+}
+
+.partners__blocks__about__bolt {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #444444;
+  margin-bottom: 15px;
+}
+
+.partners__blocks__about__normal {
+  margin: 0 auto;
+  padding: 0 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  color: #666666;
+}
+
+.partners__button {
+  width: 180px;
+  height: 40px;
+  border-radius: 40px;
+  background: #FFFFFF;
+  border: 2px solid #FF4E50;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FF4E50;
+}
+
+.partners__button__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.discover {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.discover__block__text {
+  padding: 0 10px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.discover__block__first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.discover__block__first__sport, .discover__block__first__health, .discover__block__first__extreme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.discover__block__first__sport {
+  margin-right: 20px;
+  width: 300px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/1sport_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/1sport_d_t.png) 0 0 no-repeat;
+}
+
+.discover__block__first__health {
+  margin-right: 20px;
+  width: 300px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/2health_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/2health_d_t.png) 0 0 no-repeat;
+}
+
+.discover__block__first__extreme {
+  width: 300px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/3extreme_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/3extreme_d_t.png) 0 0 no-repeat;
+}
+
+.discover__block__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.discover__block__second__games, .discover__block__second__culture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.discover__block__second__games {
+  margin-right: 20px;
+  width: 300px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/4games_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/4games_d_t.png) 0 0 no-repeat;
+}
+
+.discover__block__second__culture {
+  width: 620px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/5culture_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/5culture_d_t.png) 0 0 no-repeat;
+}
+
+.discover__block__third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.discover__block__third__relax, .discover__block__third__trevelling {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.discover__block__third__relax {
+  margin-right: 20px;
+  width: 620px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/6relax_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/6relax_d_t.png) 0 0 no-repeat;
+}
+
+.discover__block__third__trevelling {
+  width: 300px;
+  height: 310px;
+  border-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/7travel_d_t.png) 0 0 no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/7travel_d_t.png) 0 0 no-repeat;
+}
+
+.holiday {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.holiday__text2 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 14px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.holiday__search {
+  margin-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.holiday__search__term {
+  margin-right: 10px;
+  border: 1px solid #D4D4D4;
+  width: 299px;
+  height: 40px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #999999;
+  padding-left: 15px;
+}
+
+.holiday__search__button {
+  width: 172px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #FF4E50;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.footer {
+  width: 65%;
+  margin: 0 auto 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__dreamshare, .footer__company, .footer__partners, .footer__icon {
+  width: 25%;
+  margin-top: 40px;
+}
+
+.footer__partners {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+}
+
+.footer__dreamshare {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FF4E50;
+}
+
+.footer__icon {
+  text-align: end;
+}
+
+.footer__icon__text {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  color: #CCCCCC;
+  margin-bottom: 7px;
+}
+
+.footer__icon__bootmap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.footer__icon__bootmap__icon {
+  width: 110px;
+  height: 24px;
+  background-image: url(../images/Bitmap.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer__company__text {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  margin-bottom: 12px;
+}
+
+.footer__company__other__text {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 26px;
+  color: #999999;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-buttons {
+    width: 87%;
+  }
+  .dreamshare {
+    width: 97%;
+  }
+  .partners {
+    width: 65%;
+  }
+  .partners__blocks {
+    display: inline-block;
+  }
+  .partners__blocks__first, .partners__blocks__second {
+    width: 100%;
+  }
+  .partners__blocks__first {
+    margin-bottom: 35px;
+  }
+  .discover {
+    width: 97%;
+  }
+  .discover__block__text {
+    padding: 0 15px;
+  }
+  .holiday__text {
+    padding-bottom: 43px;
+  }
+  .footer {
+    width: 90%;
+  }
+  .footer__dreamshare {
+    width: 30%;
+  }
+  .footer__company {
+    width: 25%;
+  }
+  .footer__partners {
+    width: 25%;
+  }
+  .footer__icon {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dreamshare__step {
+    display: inline;
+  }
+  .dreamshare__step__one, .dreamshare__step__two, .dreamshare__step__three {
+    margin: 0 auto;
+    height: 447px;
+    width: 97%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .dreamshare__step__one, .dreamshare__step__two {
+    margin-bottom: 10px;
+  }
+  .partners {
+    width: 97%;
+  }
+  .partners__blocks {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .partners__blocks__second {
+    margin-bottom: 36px;
+  }
+  .partners__button {
+    width: 280px;
+  }
+  .discover__block__first, .discover__block__second, .discover__block__third {
+    width: 97%;
+    display: inline;
+  }
+  .discover__block__first__sport {
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/1sport_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/1sport_m.png) 0 0 no-repeat;
+  }
+  .discover__block__first__health {
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/2health_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/2health_m.png) 0 0 no-repeat;
+  }
+  .discover__block__first__extreme {
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/3extreme_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/3extreme_m.png) 0 0 no-repeat;
+  }
+  .discover__block__first__sport, .discover__block__first__health, .discover__block__first__extreme {
+    width: 100%;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+  }
+  .discover__block__second__games {
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/4games_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/4games_m.png) 0 0 no-repeat;
+  }
+  .discover__block__second__culture {
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/5culture_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/5culture_m.png) 0 0 no-repeat;
+  }
+  .discover__block__second__games, .discover__block__second__culture {
+    width: 100%;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+  }
+  .discover__block__third__relax {
+    margin-bottom: 10px;
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/6relax_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/6relax_m.png) 0 0 no-repeat;
+  }
+  .discover__block__third__trevelling {
+    background: -webkit-gradient(linear, left top, left bottom, to(rgba(0, 0, 0, 0.199))), url(../images/7travel_m.png) 0 0 no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.199) 100%), url(../images/7travel_m.png) 0 0 no-repeat;
+  }
+  .discover__block__third__relax, .discover__block__third__trevelling {
+    width: 100%;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .holiday__search {
+    display: inline;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .holiday__search__term {
+    margin: 0 auto 15px;
+  }
+  .holiday__search__button {
+    width: 280px;
+    margin: 0 48px 40px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .holiday__search__button {
+    margin: 0 auto 40px;
+  }
+  .header {
+    height: 540px;
+  }
+  .header .logo-buttons {
+    padding-top: 20px;
+  }
+  .header .logo-buttons .logo {
+    position: absolute;
+    left: 27%;
+    top: 155px;
+  }
+  .header .logo-buttons .buttons {
+    position: relative;
+    margin: 0 auto;
+  }
+  .header .promo {
+    width: 90%;
+    padding-top: 108px;
+  }
+  .header .promo__bolt {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  .header .promo__normal {
+    width: 90%;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto;
+  }
+  .header .promo__button {
+    width: 280px;
+  }
+  .holiday {
+    width: 97%;
+  }
+  .holiday__search__term {
+    width: 280px;
+  }
+  .dreamshare__works, .partners__text, .discover__text, .holiday__text {
+    padding: 34px 0 15px;
+    font-size: 22px;
+    line-height: 27px;
+  }
+  .dreamshare__step__one {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.6))), url(../images/step1_m.png) 0 0 no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step1_m.png) 0 0 no-repeat;
+  }
+  .dreamshare__step__two {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.6))), url(../images/step2_m.png) 0 0 no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step2_m.png) 0 0 no-repeat;
+  }
+  .dreamshare__step__three {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.6))), url(../images/step3_m.png) 0 0 no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%), url(../images/step3_m.png) 0 0 no-repeat;
+  }
+  .dreamshare__step__one, .dreamshare__step__two, .dreamshare__step__three {
+    height: 240px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .partners__blocks {
+    margin-bottom: 20px;
+  }
+  .partners__blocks__first, .partners__blocks__second {
+    display: inline;
+  }
+  .partners__blocks__about {
+    width: 236px;
+    height: 205px;
+    margin: 0 auto 16px;
+  }
+  .discover__block__first__sport, .discover__block__first__health, .discover__block__first__extreme {
+    width: 300px;
+    height: 120px;
+  }
+  .discover__block__second__games, .discover__block__second__culture {
+    width: 300px;
+    height: 120px;
+  }
+  .discover__block__third__relax, .discover__block__third__trevelling {
+    width: 300px;
+    height: 120px;
+  }
+  .discover__block__third__relax {
+    margin-bottom: 10px;
+  }
+  .holiday__search__button {
+    margin-left: 40px;
+  }
+  .footer {
+    display: inline;
+  }
+  .footer__dreamshare, .footer__company, .footer__partners, .footer__icon {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 14px;
+  }
+  .footer__dreamshare {
+    padding-top: 26px;
+  }
+  .footer__company__other {
+    width: 70%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer__company__other__text {
+    padding-left: 15px;
+  }
+  .footer__icon {
+    margin-bottom: 20px;
+  }
+  .footer__icon__bootmap {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .holiday__search__button {
+    margin-left: 15px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
